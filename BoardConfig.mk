@@ -26,7 +26,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_sweet
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sweet
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/sweet.config
+TARGET_KERNEL_CONFIG += vendor/sweet.defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
@@ -50,7 +50,7 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Vendor security patch level
-VENDOR_SECURITY_PATCH := 2023-11-01
+VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Inherit from proprietary files
 include vendor/xiaomi/sweet/BoardConfigVendor.mk
